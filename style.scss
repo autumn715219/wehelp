@@ -1,10 +1,5 @@
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
 
-@mixin mb {
-    @media screen and (max-width: 767px){
-      @content;
-    }
-}
 
 body{    
   font: 18px/1.5 "Noto Sans TC",Helvetica,Arial,sans-serif;
@@ -22,28 +17,25 @@ body{
 }
 .wrapper{
     position: relative;
-    width: 65%;
+    width: 60%;
     max-width: 1220px;
-    padding: 2em 5em;
+    padding: 2em 3em;
     margin: 2em auto;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: #FFF;
-    border-radius: 1em;;
-
-    @include mb {
+    background-color: rgb(255, 253, 249);
+    border-radius: 1em;
+}
+@media screen and (max-width: 767px){
+    .wrapper{
         width: 92%;
         padding: 1em;
         margin: 2em auto;
     }
-
-}
-.box {
-  background-color: rgb(255, 253, 249);
 }
 .card h3 { 
   position: relative;
-  margin: .5em 0;
+  margin: 2em 0 .5em;
   font-size:1em; 
   line-height: 2;
   font-weight: bolder;
@@ -60,6 +52,9 @@ body{
     }
     &:nth-of-type(n+10)::before { 
         content: counter(num) ". ";
+    }
+    &:nth-of-type(n+1){ 
+        margin-top: 1em;
     }
     &::after {
         content: ''; 
@@ -80,9 +75,7 @@ body{
         margin-bottom: 2em;
         text-align: justify;
 
-            @include mb {
-                padding: 1em 1em 0;
-            }
+
     }
      ol {
         padding: 1em 3em;
@@ -90,7 +83,16 @@ body{
         li {
             font-size: .8em;
             line-height: 1.5;
-            margin-bottom: 1em;
         }
+    }
+}
+
+@media screen and (max-width: 767px){
+    .card p{
+        padding: 1em 1em 0;
+    }
+    .card ol {
+        padding: 1em 2em;
+        list-style: disc;
     }
 }

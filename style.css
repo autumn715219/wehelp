@@ -18,14 +18,14 @@ body {
 
 .wrapper {
   position: relative;
-  width: 65%;
+  width: 60%;
   max-width: 1220px;
-  padding: 2em 5em;
+  padding: 2em 3em;
   margin: 2em auto;
   overflow: hidden;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #FFF;
+  background-color: #fffdf9;
   border-radius: 1em;
 }
 
@@ -37,13 +37,9 @@ body {
   }
 }
 
-.box {
-  background-color: #fffdf9;
-}
-
 .card h3 {
   position: relative;
-  margin: .5em 0;
+  margin: 2em 0 .5em;
   font-size: 1em;
   line-height: 2;
   font-weight: bolder;
@@ -64,6 +60,10 @@ body {
   content: counter(num) ". ";
 }
 
+.card h3:nth-of-type(n+1) {
+  margin-top: 1em;
+}
+
 .card h3::after {
   content: '';
   position: absolute;
@@ -81,12 +81,6 @@ body {
   text-align: justify;
 }
 
-@media screen and (max-width: 767px) {
-  .card p {
-    padding: 1em 1em 0;
-  }
-}
-
 .card ol {
   padding: 1em 3em;
   list-style: disc;
@@ -95,6 +89,15 @@ body {
 .card ol li {
   font-size: .8em;
   line-height: 1.5;
-  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 767px) {
+  .card p {
+    padding: 1em 1em 0;
+  }
+  .card ol {
+    padding: 1em 2em;
+    list-style: disc;
+  }
 }
 /*# sourceMappingURL=style.css.map */
