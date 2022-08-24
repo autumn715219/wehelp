@@ -1,57 +1,100 @@
-.wrapper{
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+body {
+  font: 18px/1.5 "Noto Sans TC",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-font-smoothing: antialiased !important;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#3702a3), to(#dc4225));
+  background-image: linear-gradient(to bottom right, #3702a3, #dc4225);
+  z-index: -1;
+}
+
+.wrapper {
   position: relative;
-  width: 960px;
-  margin: 0 auto;
+  width: 65%;
+  max-width: 1220px;
+  padding: 2em 5em;
+  margin: 2em auto;
   overflow: hidden;
-}
-ul.box_qa{
-  width: 800px;
-  margin:0 auto;
-}
-ul.box_qa li{
-  background-color: #fef5e0;
-  list-style:none;
-  margin-top:10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #FFF;
+  border-radius: 1em;
 }
 
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 92%;
+    padding: 1em;
+    margin: 2em auto;
+  }
+}
 
-.question{
+.box {
+  background-color: #fffdf9;
+}
+
+.card h3 {
   position: relative;
-  margin: 0;
-  padding: .5em 1em;
+  margin: .5em 0;
   font-size: 1em;
-  font-weight: bold;
-  cursor: pointer;
-}
-.question:hover{
-    text-decoration:underline;
+  line-height: 2;
+  font-weight: bolder;
+  font-style: italic;
+  counter-increment: num;
 }
 
-.question:after {
-  content: "";
+.card h3::before {
+  content: "0" counter(num) ". ";
+  color: #dad8d9;
+  font-family: Times;
+  font-size: 2em;
+  line-height: 1;
+  letter-spacing: -0.005em;
+}
+
+.card h3:nth-of-type(n+10)::before {
+  content: counter(num) ". ";
+}
+
+.card h3::after {
+  content: '';
   position: absolute;
-  right: 25px;
-  top: 38%;
-  transition: all 0.2s ease-in-out;
-
-  
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-top: solid 4px #000;
-  border-right: solid 4px #000;
-  
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-
-  
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.01em;
+  background: #dad8d9;
 }
 
-.question.open:after {
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 45%;
+.card p {
+  font-size: .8em;
+  padding: 1em 2em 0;
+  margin-bottom: 2em;
+  text-align: justify;
 }
-.answer{
-  padding: .5em 1em;
+
+@media screen and (max-width: 767px) {
+  .card p {
+    padding: 1em 1em 0;
+  }
 }
+
+.card ol {
+  padding: 1em 3em;
+  list-style: disc;
+}
+
+.card ol li {
+  font-size: .8em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+/*# sourceMappingURL=style.css.map */
