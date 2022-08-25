@@ -10,6 +10,9 @@ body{
   font: 18px/1.5 "Noto Sans TC",Helvetica,Arial,sans-serif;
   -webkit-font-smoothing: antialiased !important;
      -moz-font-smoothing: antialiased !important;
+     @include mb{
+        font: 20px/1.5 "Noto Sans TC",Helvetica,Arial,sans-serif;
+    }
 }
 
 .bg {
@@ -69,7 +72,7 @@ body{
               bottom: 0; 
               left:0; 
               width: 100%; 
-              height: 0.01em; 
+              height: 0.02em; 
               background: #dad8d9; 
           }
       
